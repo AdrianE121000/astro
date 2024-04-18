@@ -1,6 +1,3 @@
 {
-  "extends": "astro/tsconfigs/strict",
-  "compilerOptions": {
-    "jsxImportSource": "preact"
-  }
+  "extends": "astro/tsconfigs/strict"
 }
