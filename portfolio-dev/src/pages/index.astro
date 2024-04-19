@@ -1,5 +1,74 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Badge from '../components/Badge.astro';
+import Linkedin from '../icons/Linkedin.astro';
+import SocialPill from '../components/SocialPill.astro';
+import GitHub from '../icons/GitHub.astro';
+import Mail from '../icons/Mail.astro';
+import Experience from '../components/Experience.astro';
+import Projects from '../components/Projects.astro';
+import SectionContainer from '../components/SectionContainer.astro';
+import BriefCase from '../icons/BriefCase.astro';
+import Code from '../icons/Code.astro';
 ---
 
-<Layout title='' />
+<Layout
+  title='Adrian Dev - Web Developer and Programer'
+  description='A simple Web App where you can know about me, contact me, see my projects and more.'>
+  <main class='px-4'>
+    <SectionContainer class='py-44 pb-32'>
+      <img
+        class='rounded-full size-12 mb-2'
+        src='https://unavatar.io/AdrianE121000'
+        alt='Logo'
+      />
+      <h1
+        class='text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10'>
+        Hey, soy Adrian <a
+          href='https://www.linkedin.com/in/adrian-p%C3%A9rez-441ba3264'
+          target='_blank'
+          rel='noopener'
+          class='flex justify-center items-center'>
+          <Badge>Disponible para trabajar</Badge>
+        </a>
+      </h1>
+      <h2 class='text-xl lg:text-2xl text-wrap max-w-[700px]'>
+        <span>+1 año de experiencia.</span>
+        <span class='text-yellow-200/90'>Desarrollador Web.</span>
+        <span class='text-red-200/90'>De Trinidad, Cuba.</span>
+        <span class='opacity-75'>Especializado en crear webs únicas.</span>
+      </h2>
+      <nav class='flex gap-4 mt-8 flex-wrap'>
+        <SocialPill
+          href='https://www.linkedin.com/in/adrian-p%C3%A9rez-441ba3264'>
+          <Linkedin class='size-4 lg:size-6' />
+          LinkedIn
+        </SocialPill>
+        <SocialPill href='https://www.github.com/AdrianE121000'>
+          <GitHub class='size-4 lg:size-6' />
+          GitHub
+        </SocialPill>
+        <SocialPill href='mailto:adrianperezsotolongo@gmail.com'>
+          <Mail class='size-4 lg:size-6' />
+          adrianperezsotolongo@gmail.com
+        </SocialPill>
+      </nav>
+    </SectionContainer>
+
+    <SectionContainer id='experience'>
+      <h2 class='text-3xl font-semibold mb-6 flex items-center gap-x-3'>
+        <BriefCase class='size-7' />
+        Experiencia Laboral
+      </h2>
+      <Experience />
+    </SectionContainer>
+
+    <SectionContainer id='experience'>
+      <h2 class='text-3xl font-semibold mb-6 flex items-center gap-x-3'>
+        <Code class='size-7' />
+        Proyectos
+      </h2>
+      <Projects />
+    </SectionContainer>
+  </main>
+</Layout>
