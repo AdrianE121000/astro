@@ -1,0 +1,44 @@
+---
+import ExperienceItem from './ExperienceItem.astro';
+
+const EXPERIENCE = [
+  {
+    date: 'Actualmente...',
+    title: 'Lorem ipsum dolor sit amet consectetur.',
+    description:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla placeat repudiandae impedit quas cum officia, cumque voluptatibus recusandae rerum repellat?',
+    link: '#',
+  },
+  {
+    date: 'March 2022',
+    title: 'Lorem ipsum dolor sit amet consectetur.',
+    description:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla placeat repudiandae impedit quas cum officia, cumque voluptatibus recusandae rerum repellat?',
+    link: '#',
+  },
+  {
+    date: 'April 2022',
+    title: 'Lorem ipsum dolor sit amet consectetur.',
+    description:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla placeat repudiandae impedit quas cum officia, cumque voluptatibus recusandae rerum repellat?',
+    link: '#',
+  },
+  {
+    date: 'April 2022',
+    title: 'Lorem ipsum dolor sit amet consectetur.',
+    description:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla placeat repudiandae impedit quas cum officia, cumque voluptatibus recusandae rerum repellat?',
+    link: '#',
+  },
+];
+---
+
+<ol class='relative border-s border-gray-200 ml-3'>
+  {
+    EXPERIENCE.map((exp) => (
+      <li class='mb-10 ms-4'>
+        <ExperienceItem {...exp} />
+      </li>
+    ))
+  }
+</ol>

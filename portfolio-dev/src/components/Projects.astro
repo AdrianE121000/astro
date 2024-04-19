@@ -1,0 +1,63 @@
+---
+const PROJECTS = [
+  {
+    title: 'learnDeals',
+    description:
+      'Blog donde se publican diferentes cursos con promociones de descuento de Udemy, el usuario puede filtrar por nombre y categoría, se utiliza una API para obtener los datos del curso.',
+    image:
+      'https://github.com/AdrianE121000/portfolio/blob/master/public/learndDeals.jpg?raw=true',
+    tags: ['React', 'API', 'Tailwind', 'Python'],
+    link: 'https://learndeals.netlify.app/',
+  },
+  {
+    title: 'Quiz App',
+    description:
+      'Aplicación web que permite a los usuarios hacer un quiz para medir sus habilidades en distintos lenguages de programacion (por ahora solo JavaScript y Python uqeda pendiente agregar otros) ',
+    image: 'https://adriane121000.github.io/portfolio/quiz-app.jpg',
+    tags: ['React', 'Zustand', 'MaterialUI', 'State'],
+    link: 'https://adriane121000.github.io/javascript-quizz',
+  },
+  {
+    title: 'User Manager',
+    description:
+      'Aplicación web que permite mostrar, agregar, eliminar y editar usuarios, así como tambíen obtener usuarios aleatorios de una API, guarda todos los usuarios en el localStorage, tambíen cuenta con una paginación y modo claro y oscuro para mejorar la experiencia del usuario.',
+    image: 'https://adriane121000.github.io/portfolio/user-manager.jpg',
+    tags: ['React', 'Zustand', 'Tailwind', 'Fetch'],
+    link: 'https://adriane121000.github.io/user-crud',
+  },
+  {
+    title: 'Todo App',
+    description:
+      'Aplicación web que permite a los usuarios agregar diferentes tareas, así como seleccionar aquellas que han sido completadas y filtrarlas según su estado (completadas o no completadas)',
+    image: 'https://adriane121000.github.io/portfolio/todo_app.jpg',
+    tags: ['React', 'Tailwindcss', 'Context', 'State'],
+    link: 'https://adriane121000.github.io/todo-app',
+  },
+  {
+    title: 'Crypto Market',
+    description:
+      'Aplicación web que muestra un listado de los precios de las criptomonedas. Se utiliza la API de CoinGecko para obtener datos actualizados sobre los precios de las criptomonedas y se muestran en un formato fácil de entender para los usuarios.',
+    image: 'https://adriane121000.github.io/portfolio/crypto_market.jpg',
+    tags: ['React', 'API', 'Material UI', 'State'],
+    link: 'https://adriane121000.github.io/crypto-market',
+  },
+];
+---
+
+{
+  PROJECTS.map((project) => (
+    <article>
+      <h3>{project.title}</h3>
+      <p>{project.description}</p>
+      <ul>
+        {project.tags.map((tag) => (
+          <li>{tag}</li>
+        ))}
+      </ul>
+      <img
+        src={project.image}
+        alt={project.title}
+      />
+    </article>
+  ))
+}
