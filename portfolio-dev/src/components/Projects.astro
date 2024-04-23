@@ -1,5 +1,7 @@
 ---
+import MatarialUI from '../icons/MatarialUI.astro';
 import Next from '../icons/Next.astro';
+import React from '../icons/React.astro';
 import Tailwind from '../icons/Tailwind.astro';
 
 const TAGS = {
@@ -13,6 +15,16 @@ const TAGS = {
     class: 'bg-[#003159] text-white',
     icon: Tailwind,
   },
+  React: {
+    name: 'React',
+    class: 'bg-blue-900 text-white',
+    icon: React,
+  },
+  MATERIALUI: {
+    name: 'Material UI',
+    class: 'bg-gray-800 text-white',
+    icon: MatarialUI,
+  },
 };
 
 const PROJECTS = [
@@ -21,49 +33,53 @@ const PROJECTS = [
     description:
       'Blog donde se publican diferentes cursos con promociones de descuento de Udemy, el usuario puede filtrar por nombre y categoría, se utiliza una API para obtener los datos del curso.',
     image: '/projects/learndeals.webp',
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
+    tags: [TAGS.NEXT, TAGS.TAILWIND, TAGS.React],
     link: 'https://learndeals.netlify.app/',
   },
-  // {
-  //   title: 'Quiz App',
-  //   description:
-  //     'Aplicación web que permite a los usuarios hacer un quiz para medir sus habilidades en distintos lenguages de programacion (por ahora solo JavaScript y Python uqeda pendiente agregar otros) ',
-  //   image: 'https://adriane121000.github.io/portfolio/quiz-app.jpg',
-  //   tags: ['React', 'Zustand', 'MaterialUI', 'State'],
-  //   link: 'https://adriane121000.github.io/javascript-quizz',
-  // },
-  // {
-  //   title: 'User Manager',
-  //   description:
-  //     'Aplicación web que permite mostrar, agregar, eliminar y editar usuarios, así como tambíen obtener usuarios aleatorios de una API, guarda todos los usuarios en el localStorage, tambíen cuenta con una paginación y modo claro y oscuro para mejorar la experiencia del usuario.',
-  //   image: 'https://adriane121000.github.io/portfolio/user-manager.jpg',
-  //   tags: ['React', 'Zustand', 'Tailwind', 'Fetch'],
-  //   link: 'https://adriane121000.github.io/user-crud',
-  // },
-  // {
-  //   title: 'Todo App',
-  //   description:
-  //     'Aplicación web que permite a los usuarios agregar diferentes tareas, así como seleccionar aquellas que han sido completadas y filtrarlas según su estado (completadas o no completadas)',
-  //   image: 'https://adriane121000.github.io/portfolio/todo_app.jpg',
-  //   tags: ['React', 'Tailwindcss', 'Context', 'State'],
-  //   link: 'https://adriane121000.github.io/todo-app',
-  // },
-  // {
-  //   title: 'Crypto Market',
-  //   description:
-  //     'Aplicación web que muestra un listado de los precios de las criptomonedas. Se utiliza la API de CoinGecko para obtener datos actualizados sobre los precios de las criptomonedas y se muestran en un formato fácil de entender para los usuarios.',
-  //   image: 'https://adriane121000.github.io/portfolio/crypto_market.jpg',
-  //   tags: ['React', 'API', 'Material UI', 'State'],
-  //   link: 'https://adriane121000.github.io/crypto-market',
-  // },
+  {
+    title: 'Quiz App',
+    description:
+      'Aplicación web que permite a los usuarios hacer un quiz para medir sus habilidades en distintos lenguages de programacion (por ahora solo JavaScript y Python uqeda pendiente agregar otros) ',
+    image: '/projects/quizApp.webp',
+    tags: [TAGS.React, TAGS.MATERIALUI],
+    link: 'https://adriane121000.github.io/javascript-quizz',
+  },
+  {
+    title: 'User Manager',
+    description:
+      'Aplicación web que permite mostrar, agregar, eliminar y editar usuarios, así como tambíen obtener usuarios aleatorios de una API, guarda todos los usuarios en el localStorage, tambíen cuenta con una paginación y modo claro y oscuro para mejorar la experiencia del usuario.',
+    image: '/projects/userManager.webp',
+    tags: [TAGS.React, TAGS.TAILWIND],
+    link: 'https://adriane121000.github.io/user-crud',
+  },
+  {
+    title: 'Todo App',
+    description:
+      'Aplicación web que permite a los usuarios agregar diferentes tareas, así como seleccionar aquellas que han sido completadas y filtrarlas según su estado (completadas o no completadas)',
+    image: '/projects/todoApp.webp',
+    tags: [TAGS.React, TAGS.TAILWIND],
+    link: 'https://adriane121000.github.io/todo-app',
+  },
+  {
+    title: 'Crypto Market',
+    description:
+      'Aplicación web que muestra un listado de los precios de las criptomonedas. Se utiliza la API de CoinGecko para obtener datos actualizados sobre los precios de las criptomonedas y se muestran en un formato fácil de entender para los usuarios.',
+    image: '/projects/cryptoMarket.webp',
+    tags: [TAGS.React, TAGS.MATERIALUI],
+    link: 'https://adriane121000.github.io/crypto-market',
+  },
 ];
 ---
 
 {
   PROJECTS.map((project) => (
     <article>
-      <h3 class='text-2xl font-semibold text-yellow-200 mb-2'>
-        {project.title}
+      <h3 class='text-3xl font-semibold text-yellow-200 mb-2 mt-16 hover:underline'>
+        <a
+          href={project.link}
+          target='_blank'>
+          {project.title}
+        </a>
       </h3>
       <p class='text-lg mb-4 text-pretty'>{project.description}</p>
       <ul class='flex gap-x-2 flex-row mb-2'>
@@ -78,7 +94,7 @@ const PROJECTS = [
         ))}
       </ul>
       <img
-        class='rounded shadow-2xl shadow-white/10'
+        class='rounded shadow-lg shadow-white/10'
         src={project.image}
         alt={project.title}
       />
