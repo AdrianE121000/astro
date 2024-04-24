@@ -10,6 +10,8 @@ import Projects from '../components/Projects.astro';
 import SectionContainer from '../components/SectionContainer.astro';
 import BriefCase from '../icons/BriefCase.astro';
 import Code from '../icons/Code.astro';
+import Skill from '../icons/Skill.astro';
+import Skills from '../components/Skills.astro';
 ---
 
 <Layout
@@ -63,6 +65,14 @@ import Code from '../icons/Code.astro';
         Experiencia Laboral
       </h2>
       <Experience />
+    </SectionContainer>
+
+    <SectionContainer id='skills'>
+      <h2 class='text-3xl font-semibold mb-6 flex items-center gap-x-3'>
+        <Skill class='size-7' />
+        Skills
+      </h2>
+      <Skills />
     </SectionContainer>
 
     <SectionContainer id='projects'>

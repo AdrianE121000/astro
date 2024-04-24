@@ -1,0 +1,66 @@
+---
+import Next from '../icons/Next.astro';
+import React from '../icons/React.astro';
+import Tailwind from '../icons/Tailwind.astro';
+import HTML from '../icons/HTML.astro';
+import JavaScript from '../icons/JavaScript.astro';
+import TypeScript from '../icons/TypeScript.astro';
+import CSS from '../icons/CSS.astro';
+import AstroIcon from '../icons/AstroIcon.astro';
+import Git from '../icons/Git.astro';
+import GitHub from '../icons/GitHub.astro';
+
+const SKILLS = [
+  {
+    name: 'React Js',
+    icon: React,
+  },
+  {
+    name: 'Nextjs',
+    icon: Next,
+  },
+  {
+    name: 'Astro',
+    icon: AstroIcon,
+  },
+  {
+    name: 'HTML',
+    icon: HTML,
+  },
+  {
+    name: 'CSS',
+    icon: CSS,
+  },
+  {
+    name: 'JavaScript',
+    icon: JavaScript,
+  },
+  {
+    name: 'TypeScript',
+    icon: TypeScript,
+  },
+  {
+    name: 'Tailwindcss',
+    icon: Tailwind,
+  },
+  {
+    name: 'Git',
+    icon: Git,
+  },
+  {
+    name: 'GitHub',
+    icon: GitHub,
+  },
+];
+---
+
+<ol class='flex flex-wrap justify-start'>
+  {
+    SKILLS.map((skill) => (
+      <li class='flex items-center justify-center rounded-xl border border-white/50 m-3 px-2 py-2 shadow shadow-white/50'>
+        <skill.icon class='size-8 rounded' />
+        <h3 class='mx-2'>{skill.name}</h3>
+      </li>
+    ))
+  }
+</ol>
